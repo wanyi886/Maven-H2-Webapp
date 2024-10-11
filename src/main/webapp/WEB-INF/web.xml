@@ -2,10 +2,31 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
   <display-name>Maven-H2-Webapp</display-name>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.wlee.controller.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <servlet-class>com.qlys.controller.WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>H2Console</servlet-name>
+    <servlet-class>org.h2.server.web.WebServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>H2Console</servlet-name>
+    <url-pattern>/h2-console/*</url-pattern>
+  </servlet-mapping>
+
+  <listener>
+    <listener-class>com.wlee.util.DatabaseInitializer</listener-class>
+  </listener>
 </web-app>
