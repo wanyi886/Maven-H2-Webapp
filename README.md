@@ -7,3 +7,13 @@ Practice project - Java Web Application with H2 Database
 To run the app locally:
 mvn clean install
 mvn jetty:run
+
+Check database:
+Run the app
+Go to http://localhost:8080/h2-console
+JDBC url: jdbc:h2:./data/mydb
+Username: sa
+Password: "" (leave it empty)
+
+Click Connect
+

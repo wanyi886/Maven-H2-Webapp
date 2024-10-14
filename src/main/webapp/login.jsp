@@ -12,7 +12,7 @@
                 <h1 >Login</h1>
             </div>
             <div class="inner-container">
-                <form action="/api/login" method="post">
+                <form action="/login" method="post">
                     <% String errorMessage = (String) request.getAttribute("errorMessage");
                        if (errorMessage != null) { %>       
                         <p style="color: red;">Invalid email or Password.</p>

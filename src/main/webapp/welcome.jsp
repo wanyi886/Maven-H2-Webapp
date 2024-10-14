@@ -23,7 +23,7 @@
 
                 <div class="form">
                     <h2>Change Password</h2>
-                    <form action="/api/change_pwd" method="POST">
+                    <form action="/change_pwd" method="POST">
                         <div class="form-group">
                             <label for="currentPassword">Current Password:</label>
                             <input type="password" id="currentPassword" name="currentPassword" required>

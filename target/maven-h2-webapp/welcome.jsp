@@ -11,9 +11,9 @@
 <body>
     <div class="container">
         <h1>Welcome</h1>
+        <!-- Typecasting: convert the value of a single data type into another data type -->
+        <!-- (User) casts this object to the User type -->
         <%
-            <!-- Typecasting: convert the value of a single data type into another data type -->
-            <!-- (User) casts this object to the User type -->
             User user = (User) session.getAttribute("user");
             if (user != null) {
         %>
@@ -23,7 +23,7 @@
 
                 <div class="form">
                     <h2>Change Password</h2>
-                    <form action="/api/change_pwd" method="POST">
+                    <form action="/change_pwd" method="POST">
                         <div class="form-group">
                             <label for="currentPassword">Current Password:</label>
                             <input type="password" id="currentPassword" name="currentPassword" required>

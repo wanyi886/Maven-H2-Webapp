@@ -40,6 +40,15 @@ public class DatabaseInitializer implements ServletContextListener {
 
             // reads the file line by line
             while( (line = reader.readLine()) != null) {
+                
+                line = line.trim();
+
+                // skip empty lines and comments, to prevent sql execution error
+                if (line.isEmpty() || line.startsWith("--")) {
+                    continue;
+                }
+
+
                 sBuilder.append(line);
 
                 if (line.endsWith(";")) {
