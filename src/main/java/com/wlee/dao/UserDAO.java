@@ -14,7 +14,7 @@ public class UserDAO {
         try {
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement pStatement = conn.prepareStatement(sql);
-            pStatement.setString(1, sql);
+            pStatement.setString(1, email);
             ResultSet resultS = pStatement.executeQuery();
 
             if (resultS.next()) {

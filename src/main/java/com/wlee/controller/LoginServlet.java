@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
 
             try {
                 User existingUser = userDAO.findByEmail(email);
+                System.out.println("existingUser: " + existingUser);
     
                 if (existingUser == null || !existingUser.getPassword().equals(password)) {
                     request.setAttribute("errorMessage", "Invalid username or password");
