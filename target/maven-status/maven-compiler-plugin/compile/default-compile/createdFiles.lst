@@ -1,5 +1,6 @@
-com/wlee/dao/UserDAO.class
 com/wlee/dao/DatabaseConnection.class
-com/wlee/util/DatabaseInitializer.class
 com/wlee/controller/LoginServlet.class
+com/wlee/controller/WelcomeServlet.class
 com/wlee/model/User.class
+com/wlee/dao/UserDAO.class
+com/wlee/util/DatabaseInitializer.class

@@ -4,6 +4,16 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(2545) NOT NULL
 );
 
-INSERT INTO users (email, password) VALUES ('test', 'abc123');
-INSERT INTO users (email, password) VALUES ('ABCUUU', '***');
-INSERT INTO users (email, password) VALUES ('helloworld', 'helloworld');
+-- H2 doesn't support INSERT IF NOT EXISTS
+
+INSERT INTO users (email, password)
+SELECT 'test', 'abc123'
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE email = 'test');
+
+INSERT INTO users (email, password)
+SELECT 'ABCUUU', '***'
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE email = 'ABCUUU');
+
+INSERT INTO users (email, password)
+SELECT 'helloworld', 'helloworld'
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE email = 'helloworld');

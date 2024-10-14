@@ -13,7 +13,7 @@
   </servlet>
   <servlet>
     <servlet-name>WelcomeServlet</servlet-name>
-    <servlet-class>com.qlys.controller.WelcomeServlet</servlet-class>
+    <servlet-class>com.wlee.controller.WelcomeServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>H2Console</servlet-name>

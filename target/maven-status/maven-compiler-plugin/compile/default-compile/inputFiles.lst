@@ -1,4 +1,5 @@
 /Users/wlee/Desktop/Maven-H2-Webapp/src/main/java/com/wlee/controller/LoginServlet.java
+/Users/wlee/Desktop/Maven-H2-Webapp/src/main/java/com/wlee/controller/WelcomeServlet.java
 /Users/wlee/Desktop/Maven-H2-Webapp/src/main/java/com/wlee/dao/DatabaseConnection.java
 /Users/wlee/Desktop/Maven-H2-Webapp/src/main/java/com/wlee/dao/UserDAO.java
 /Users/wlee/Desktop/Maven-H2-Webapp/src/main/java/com/wlee/model/User.java
