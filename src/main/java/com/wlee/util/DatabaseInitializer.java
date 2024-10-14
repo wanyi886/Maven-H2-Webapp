@@ -20,7 +20,7 @@ public class DatabaseInitializer implements ServletContextListener {
             Connection conn = DatabaseConnection.getConnection();
             Statement statement = conn.createStatement();
             
-            String resourcePath = "/resources/init.sql";
+            String resourcePath = "/init.sql";
 
             // get the input stream from sql file
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resourcePath);

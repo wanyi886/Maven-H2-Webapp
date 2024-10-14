@@ -14,7 +14,7 @@ public class DatabaseConnection {
             // load the JDBC driver for the H2 database into memory
             // Class.forName() is a static method in Java that loads a class by its fully qualified name
             // this registers the driver with the Drivemanager;
-            Class.forName("org.h2.driver");
+            Class.forName("org.h2.Driver");
 
         } catch (ClassNotFoundException e) {
             throw new SQLException("H2 JDBC Driver not found.", e);
