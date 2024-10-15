@@ -69,7 +69,6 @@ public class UserDAO {
             if (rowsAffected == 0) {
                 throw new SQLException("No user found with email: " + email);
             }
-            // System.out.println("rowsAffected" + rowsAffected);
 
         } catch (SQLException e) {
             System.err.println("Error updating Password" +  e.getMessage());
