@@ -25,7 +25,7 @@ body {
 button  {
     width: 300px;
     height: 35px;
-    margin: 5px;
+    margin: 15px;
     background-color: rgb(0, 140, 255);
     border: none;
     color: white;
@@ -43,6 +43,14 @@ input {
     font-size: large;
 }
 
+h3 {
+    color: rgb(0, 140, 255);
+}
+
+h1,h2 {
+    color:rgb(75, 75, 75);
+}
+
 input:focus{
     outline: none
 }
@@ -50,3 +58,4 @@ input:focus{
 p {
     margin: 10px;
 }
+

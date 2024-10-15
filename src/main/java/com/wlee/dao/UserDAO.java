@@ -54,4 +54,26 @@ public class UserDAO {
             throw e;
         }
     }
+
+    public void updatePWD(String email, String newPWD) throws SQLException {
+        String sql = "UPDATE users SET password = ? WHERE email = ?";
+
+        try {
+            Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement pStatement = conn.prepareStatement(sql);
+            pStatement.setString(1, newPWD);
+            pStatement.setString(2, email);
+            
+            int rowsAffected = pStatement.executeUpdate();
+
+            if (rowsAffected == 0) {
+                throw new SQLException("No user found with email: " + email);
+            }
+            // System.out.println("rowsAffected" + rowsAffected);
+
+        } catch (SQLException e) {
+            System.err.println("Error updating Password" +  e.getMessage());
+            throw e;
+        }
+    }
 }

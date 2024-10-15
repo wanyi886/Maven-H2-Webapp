@@ -16,6 +16,10 @@
     <servlet-class>com.wlee.controller.WelcomeServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>ChangePWDServlet</servlet-name>
+    <servlet-class>com.wlee.controller.ChangePWDServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>H2Console</servlet-name>
     <servlet-class>org.h2.server.web.WebServlet</servlet-class>
     <load-on-startup>1</load-on-startup>

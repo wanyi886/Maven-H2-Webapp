@@ -17,32 +17,16 @@
             User user = (User) session.getAttribute("user");
             if (user != null) {
         %>
-                <div class="user-info">
-                    <div>Your account email: <%= user.getEmail() %></div>
+                <div class="inner-container">
+                    <h3><%= user.getEmail() %></h3>
                 </div>
-
-                <div class="form">
-                    <h2>Change Password</h2>
-                    <form action="/change_pwd" method="POST">
-                        <div class="form-group">
-                            <label for="currentPassword">Current Password:</label>
-                            <input type="password" id="currentPassword" name="currentPassword" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="newPassword">New Password:</label>
-                            <input type="password" id="newPassword" name="newPassword" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="confirmPassword">Confirm New Password:</label>
-                            <input type="password" id="confirmPassword" name="confirmPassword" required>
-                        </div>
-                        <button type="submit">Change Password</button>
-                    </form>
+                <div class="inner-container">
+                   <a href="/changePWD">Change Password</a>
                 </div>
             <%
             } else {
             %>
-                <p>Please <a href="login.jsp">log in</a>to see this page.</p>
+                <p>Please <a href="/login">log in</a>to see this page.</p>
             <%   
             }
             %>
