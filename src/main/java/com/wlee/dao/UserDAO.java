@@ -39,7 +39,7 @@ public class UserDAO {
         return null;
     }
 
-    public void save(User user) throws SQLException {
+    public void add(User user) throws SQLException {
         String sql = "INSERT INTO users (email, password) VALUES(?, ?)";
 
         try {

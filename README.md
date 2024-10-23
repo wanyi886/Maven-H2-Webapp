@@ -16,3 +16,9 @@ Check database:
 - Username: sa
 - Password: "" (leave it empty)
 - Click Connect
+
+
+To run the app with docker:
+- mvn clean package
+- docker build . -t maven-h2-webapp
+- docker run -p 5012:5012 maven-h2-webapp
