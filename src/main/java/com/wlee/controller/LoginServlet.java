@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.wlee.dao.UserDAO;
 import com.wlee.model.User;
+import com.wlee.util.PasswordUtils;
 
 @WebServlet("/login")
 
@@ -33,9 +34,8 @@ public class LoginServlet extends HttpServlet {
 
             try {
                 User existingUser = userDAO.findByEmail(email);
-                System.out.println("existingUser: " + existingUser);
     
-                if (existingUser == null || !existingUser.getPassword().equals(password)) {
+                if (existingUser == null || !PasswordUtils.checkPassword(password, existingUser.getPassword())) {
                     request.setAttribute("errorMessage", "Invalid username or password");
                     request.getRequestDispatcher("/login.jsp").forward(request, response); 
                 }

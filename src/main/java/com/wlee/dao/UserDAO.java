@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.wlee.model.User;
+import com.wlee.util.PasswordUtils;
 
 public class UserDAO {
     public User findByEmail(String email) throws SQLException {
@@ -61,8 +62,10 @@ public class UserDAO {
         try {
             Connection conn = DatabaseConnection.getConnection();
             PreparedStatement pStatement = conn.prepareStatement(sql);
-            pStatement.setString(1, newPWD);
             pStatement.setString(2, email);
+
+            String hashedPWD = PasswordUtils.hashPassword(newPWD);
+            pStatement.setString(1, hashedPWD);
             
             int rowsAffected = pStatement.executeUpdate();
 
