@@ -30,7 +30,7 @@ public class ChangePWDServlet extends HttpServlet {
 
         try {
             User existingUser = userDAO.findByEmail(email);
-            
+
             if (existingUser == null || !PasswordUtils.checkPassword(currentPWD, existingUser.getPassword())) {
                 request.setAttribute("errorMessage", "Invalid username or password");
                 request.getRequestDispatcher("/welcome.jsp").forward(request, response);
@@ -40,11 +40,16 @@ public class ChangePWDServlet extends HttpServlet {
             // update password
             userDAO.updatePWD(email, newPWD);
 
+            System.out.println("after userDAO.updatePWD");
+
             request.setAttribute("Succeeded", "Password Updated.");
             
-            request.getRequestDispatcher("/welcome").forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/welcome");
+
             
         } catch (Exception e) {
+            System.out.println("Error in doPost: " + e.getMessage());
+            
             throw new ServletException("Error while changing password.", e);
         }
    }
