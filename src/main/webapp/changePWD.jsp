@@ -20,7 +20,7 @@
                         <div class="inner-container">
                             <!-- <h2>Change Password</h2> -->
                         </div>
-                        <form action="/changePWD" method="post">
+                        <form action="${pageContext.request.contextPath}/changePWD" method="post">
                             <div class="form-group">
                                 <input placeholder="Current Password" type="password" id="currentPassword" name="currentPassword" required>
                             </div>

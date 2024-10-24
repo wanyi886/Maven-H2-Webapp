@@ -5,3 +5,4 @@ com/wlee/model/User.class
 com/wlee/dao/UserDAO.class
 com/wlee/controller/ChangePWDServlet.class
 com/wlee/util/DatabaseInitializer.class
+com/wlee/util/PasswordUtils.class
